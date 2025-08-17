@@ -1,0 +1,9 @@
+# Insert data into Snowflake
+
+for index, row in df.iterrows():
+    cur.execute(
+        "INSERT INTO students_data (roll_no, name, grade) VALUES (%s, %s, %s)",
+        (row['roll_no'], row['name'], row['grade'])
+    )
+
+sf_conn.commit()

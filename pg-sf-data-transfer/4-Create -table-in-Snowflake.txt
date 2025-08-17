@@ -1,0 +1,11 @@
+# Create table in Snowflake if not exists
+
+cur.execute("CREATE DATABASE IF NOT EXISTS MY_DB")
+cur.execute("CREATE SCHEMA IF NOT EXISTS MY_DB.MY_SCHEMA")
+cur.execute("""
+CREATE TABLE IF NOT EXISTS MY_DB.MY_SCHEMA.students_data (
+    roll_no INT,
+    name STRING,
+    grade STRING
+)
+""")

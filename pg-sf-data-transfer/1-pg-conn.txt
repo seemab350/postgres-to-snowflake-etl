@@ -1,0 +1,19 @@
+import psycopg2
+import pandas as pd
+import snowflake.connector
+
+# PostgreSQL connection
+pg_conn = psycopg2.connect(
+    host="localhost",
+    port=5432,
+    database="school",
+    user="postgres",
+    password="shah123"
+)
+
+# Example: read data from a table
+query = 'SELECT * FROM "teachers-schema".students_data;'
+df = pd.read_sql(query, pg_conn)
+print(df.head())
+
+pg_conn.close()

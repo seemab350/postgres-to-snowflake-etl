@@ -1,0 +1,11 @@
+#Snowflake connection
+
+sf_conn = snowflake.connector.connect(
+    user='my_user',
+    password='MyStrongPassword123!',
+    account='ywpcvjb-tk81977',
+    warehouse='MY_WH',
+    database='MY_DB',
+    schema='MY_SCHEMA'
+)
+cur = sf_conn.cursor()

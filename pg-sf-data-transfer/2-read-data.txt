@@ -1,0 +1,4 @@
+#  read data from a table
+query = 'SELECT * FROM "teachers-schema".students_data;'
+df = pd.read_sql(query, pg_conn)
+print(df.head())
